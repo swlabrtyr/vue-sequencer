@@ -102,28 +102,100 @@ export const store = new Vuex.Store({
       state.notes.map(function (note) {
         if (note.id === noteData.id) {
           return (note.isArmed = !note.isArmed);
+        } else {
+          console.log("no notes armed");
+          return null;
         }
       });
     },
     updateDelay(state, sliderData) {
       console.log("delay data: ", sliderData);
       if (sliderData.type === "time") {
-        state.delayTime = sliderData.val;
-      } else state.delayFB = sliderData.val;
+        return state.delayTime = sliderData.val;
+      } else return state.delayFB = sliderData.val;
     },
     setPitch(state, noteData) {
       state.notes.map(note => {
         if (note.id === noteData.id) {
           return (note.pitch = noteData.pitch);
+        } else {
+          console.log("no notes scheduled");
+          return null;
         }
       });
     },
     filterCutoff() { },
-    updateAmpADSR(state, sliderData) {
-      updateSlider(state, sliderData);
+
+    setFreqToVal(state, data) {
+      let id = data.id;
+      let amnt = data.val;
+
+      this.id = id;
+      this.amnt = amnt;
+
+      if (id === "filterAtk") {
+        return (state.adsr.freq.attack.amnt = amnt);
+      } else if (id === "filterDec") {
+        return (state.adsr.freq.decay.amnt = amnt);
+      } else if (id === "filterSus") {
+        return (state.adsr.freq.sustain.time = amnt);
+      } else if (id === "filterRel") {
+        return (state.adsr.freq.release.time = amnt);
+      } else return console.log("no data from: ", id);
     },
-    updateFreqADSR(state, sliderData) {
-      updateSlider(state, sliderData);
+
+    setFreqAtTime(state, data) {
+      let id = data.id;
+      let time = data.val;
+
+      this.id = id;
+      this.time = time;
+
+      if (id === "filterAtk") {
+        return (state.adsr.freq.attack.time = time);
+      } else if (id === "filterDec") {
+        return (state.adsr.freq.decay.time = time);
+      } else if (id === "filterSus") {
+        return (state.adsr.freq.sustain.time = time);
+      } else if (id === "filterRel") {
+        return (state.adsr.freq.release.time = time);
+      } return console.log("no data from: ", id);
+    },
+
+    setAmpToVal(state, data) {
+      let id = data.id;
+      let amnt = data.val;
+
+      this.id = id;
+      this.amnt = amnt;
+
+      if (id === "ampAtk") {
+        return (state.adsr.amp.attack.amnt = amnt);
+      } else if (id === "ampDec") {
+        return (state.adsr.amp.decay.amnt = amnt);
+      } else if (id === "ampSus") {
+        return (state.adsr.amp.sustain.amnt = amnt);
+      } else if (id === "ampRel") {
+        return (state.adsr.amp.release.time = amnt);
+      } else return console.log("no data from: ", id);
+    },
+
+    setAmpAtTime(state, data) {
+      let id = data.id;
+      let time = data.val;
+
+      this.id = id;
+      this.time = time;
+
+      if (id === "ampAtk") {
+        return (state.adsr.amp.attack.time = time);
+      } else if (id === "ampDec") {
+        return (state.adsr.amp.decay.time = time);
+      } else if (id === "ampSus") {
+        return (state.adsr.amp.sustain.time = time);
+      } else if (id === "ampRel") {
+        return (state.adsr.amp.release.time = time);
+      } else return console.log("no data from: ", id);
     }
   },
 
@@ -137,48 +209,3 @@ export const store = new Vuex.Store({
   }
 });
 
-function updateSlider(state, sliderData) { // should be broken up into smaller functions ??
-  let type = sliderData.type;
-  let id = sliderData.id;
-
-  if (type === "amnt" || type === "freq") {
-    if (id === "ampAtk") {
-      return (state.adsr.amp.attack.amnt = sliderData.val);
-    } else if (id === "ampDec") {
-      return (state.adsr.amp.decay.amnt = sliderData.val);
-    } else if (id === "ampSus") {
-      return (state.adsr.amp.sustain.amnt = sliderData.val);
-    } else if (id === "ampRel") {
-      return (state.adsr.amp.release.time = sliderData.val);
-    }
-    if (id === "filterAtk") {
-      return (state.adsr.freq.attack.amnt = sliderData.val);
-    } else if (id === "filterDec") {
-      return (state.adsr.freq.decay.amnt = sliderData.val);
-    } else if (id === "filterSus") {
-      return (state.adsr.freq.sustain.time = sliderData.val);
-    } else if (id === "filterRel") {
-      return (state.adsr.freq.release.time = sliderData.val);
-    }
-  } else if (type === "time") {
-    if (id === "ampAtk") {
-      return (state.adsr.amp.attack.time = sliderData.val);
-    } else if (id === "ampDec") {
-      return (state.adsr.amp.decay.time = sliderData.val);
-    } else if (id === "ampSus") {
-      return (state.adsr.amp.sustain.time = sliderData.val);
-    } else if (id === "ampRel") {
-      return (state.adsr.amp.release.time = sliderData.val);
-    }
-    if (id === "filterAtk") {
-      return (state.adsr.freq.attack.time = sliderData.val);
-    } else if (id === "filterDec") {
-      return (state.adsr.freq.decay.time = sliderData.val);
-    } else if (id === "filterSus") {
-      return (state.adsr.freq.sustain.time = sliderData.val);
-    } else if (id === "filterRel") {
-      return (state.adsr.freq.release.time = sliderData.val);
-    }
-  }
-  console.log(state.adsr);
-}

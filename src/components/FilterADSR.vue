@@ -5,30 +5,30 @@
       <div>
         <h4> Attack </h4>
         Amount     
-        <Slider v-on:slider-updated="sendValueToEngine" category="freq" id="filterAtk"></Slider>
+        <Slider :initVal="5000" :minimum="0.001" :maximum="12000" :increment="1.0" id="filterAtk" v-on:slider-updated="updateFreqAmnt"></Slider>
         Time    
-        <Slider v-on:slider-updated="sendValueToEngine" category="time" id="filterAtk"></Slider>
+        <Slider :initVal="0.5" :minimum="0.001" :maximum="3.0" :increment="0.01" id="filterAtk" v-on:slider-updated="updateFreqTime"></Slider>
       </div>
       <div>
         <h4> Decay </h4>
-        Amount 
-        <Slider v-on:slider-updated="sendValueToEngine" category="freq" id="filterDec"></Slider>
-        Time   
-        <Slider v-on:slider-updated="sendValueToEngine" category="time" id="filterDec"></Slider>
+        Amount     
+        <Slider :initVal="1000" :minimum="0.001" :maximum="12000" :increment="1.0" id="filterDec" v-on:slider-updated="updateFreqAmnt"></Slider>
+        Time    
+        <Slider :initVal="0.5" :minimum="0.001" :maximum="3.0" :increment="0.01" id="filterDec" v-on:slider-updated="updateFreqTime"></Slider>
       </div>
       <div>
         <h4> Sustain </h4>
-        Amount   
-        <Slider v-on:slider-updated="sendValueToEngine" category="freq" id="filterSus"></Slider>
-        Time 
-        <Slider v-on:slider-updated="sendValueToEngine" category="time" id="filterSus"></Slider>
+        Amount     
+        <Slider :initVal="500" :minimum="0.001" :maximum="12000" :increment="1.0" id="filterSus" v-on:slider-updated="updateFreqAmnt"></Slider>
+        Time    
+        <Slider :initVal="0.5" :minimum="0.001" :maximum="3.0" :increment="0.01" id="filterSus" v-on:slider-updated="updateFreqTime"></Slider>
       </div>
       <div>
         <h4> Release </h4>
-        Amount 
-        <Slider v-on:slider-updated="sendValueToEngine" category="freq" id="filterRel"></Slider>
-        Time 
-        <Slider v-on:slider-updated="sendValueToEngine" category="time" id="filterRel"></Slider>
+        Amount     
+        <Slider :initVal="100" :minimum="0.001" :maximum="12000" :increment="1.0" id="filterRel" v-on:slider-updated="updateFreqAmnt"></Slider>
+        Time    
+        <Slider :initVal="0.5" :minimum="0.001" :maximum="3.0" :increment="0.01" id="filteRel" v-on:slider-updated="updateFreqTime"></Slider>
       </div>
     </div>
   </div>
@@ -40,17 +40,13 @@ export default {
   components: {
     Slider
   },
-
-  data() {
-    return {
-      sliderID: "",
-      sliderVal: 0.0
-    };
-  },
-
+  
   methods: {
-    sendValueToEngine: function(sliderData) {
-      this.$store.commit("updateFreqADSR", sliderData);
+    updateFreqAmnt: function(sliderData) {
+      this.$store.commit("setFreqToVal", sliderData);
+    },
+    updateFreqTime: function(sliderData) {
+      this.$store.commit("setFreqAtTime", sliderData)
     }
   }
 };
@@ -60,6 +56,6 @@ export default {
 .ADSR {
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
-  grid-gap: 10px;
-  }
+    grid-gap: 10px;
+}
 </style>
