@@ -3,11 +3,11 @@
   <h2>Delay</h2>
   <div id="delayAmnt">
     Time
-    <Slider category="time" v-on:slider-updated="sendValueToEngine"></Slider>
+   <Slider :initVal="0.5" :minimum="0.001" :maximum="2.0" :increment="0.01" id="delayTime" v-on:slider-updated="updateDelayTime"></Slider>
   </div>
   <div id="delayFb">
     FB
-    <Slider category="amnt" v-on:slider-updated="sendValueToEngine"></Slider>
+     <Slider :initVal="0.5" :minimum="0.001" :maximum="0.8" :increment="0.01" id="delayFB" v-on:slider-updated="updateDelayFB"></Slider>
   </div>
 </div>
 </template>
@@ -19,16 +19,12 @@ export default {
     Slider
   },
 
-  data() {
-    return {
-      sliderID: "",
-      sliderVal: 0.0
-    };
-  },
-
   methods: {
-    sendValueToEngine: function(sliderData) {
-      this.$store.commit("updateDelay", sliderData);
+    updateDelayTime: function(sliderData) {
+      this.$store.commit("setDelayTime", sliderData);
+    },
+    updateDelayFB: function(sliderData) {
+      this.$store.commit("setDelayFB", sliderData);
     }
   }
 };

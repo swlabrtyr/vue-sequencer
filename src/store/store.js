@@ -108,11 +108,11 @@ export const store = new Vuex.Store({
         }
       });
     },
-    updateDelay(state, sliderData) {
-      console.log("delay data: ", sliderData);
-      if (sliderData.type === "time") {
-        return state.delayTime = sliderData.val;
-      } else return state.delayFB = sliderData.val;
+    setDelayTime(state, data) {
+      return state.delayTime = data.val;
+    },
+    setDelayFB(state, data) {
+      return state.delayFB = data.val;
     },
     setPitch(state, noteData) {
       state.notes.map(note => {
