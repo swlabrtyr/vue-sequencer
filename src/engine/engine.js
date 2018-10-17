@@ -109,7 +109,7 @@ function scheduler() {
   // sequencer loop
   while (futureTickTime < audioContext.currentTime + scheduleAheadTime) {
     current16thNote++;
-    if (current16thNote === 32) {
+    if (current16thNote === 48) {
       current16thNote = 0;
     }
     scheduleNote(current16thNote, futureTickTime, futureTickTime + stopTime);

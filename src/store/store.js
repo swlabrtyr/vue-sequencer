@@ -8,7 +8,7 @@ Vue.use(Vuex);
 // initialize note data
 function createNotes() {
   let notes = [];
-  for (let i = 0; i < 32; ++i) {
+  for (let i = 0; i < 48; ++i) {
     notes.push({
       id: i,
       pitch: 57,
