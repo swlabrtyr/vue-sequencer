@@ -1,9 +1,9 @@
 <template>
-<div class="transport">
-  <div>
+<div class="playpause">
+  <div class="btn">
     <button id="start" @click=play()> start </button>
   </div>
-  <div>
+  <div class="btn">
     <button id="stop" @click=stop()>stop</button>
   </div>
 </div>
@@ -28,8 +28,13 @@ export default {
 </script>
 
 <style scoped>
-.transport {
-  width: 100px;
-  height: 50px;
+.playpause {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  width: 200px;
+  height: 100px;
+}
+.button {
+    /* justify-self: start; */
 }
 </style>

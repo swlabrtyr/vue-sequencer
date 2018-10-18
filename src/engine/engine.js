@@ -56,14 +56,13 @@ function createFilter(type, adsrVals, initVal, callback) {
 function createOsc(type) {
   let osc = audioContext.createOscillator();
   osc.type = type;
-
   return osc;
 }
 
-function delayFX(delayAmount, fbAmount) {
+function delayFX(delayAmount, amp, fbAmount) {
   let delay = audioContext.createDelay();
   let gain = audioContext.createGain();
-  gain.gain.value = 0.8;
+  gain.gain.value = amp;
   delay.delayTime.value = delayAmount;
 
   let feedback = audioContext.createGain();
@@ -71,8 +70,8 @@ function delayFX(delayAmount, fbAmount) {
 
   // Add Lowpass Filter
   let filter = audioContext.createBiquadFilter();
-  filter.frequency.value = 1000;
-  filter.Q.value = 0.5;
+  filter.frequency.value = 2500;
+  filter.Q.value = 0.8;
 
   filter.connect(delay);
   delay.connect(feedback);
@@ -113,7 +112,7 @@ function scheduler() {
   // sequencer loop
   while (futureTickTime < audioContext.currentTime + scheduleAheadTime) {
     current16thNote++;
-    if (current16thNote === 48) {
+    if (current16thNote === 56) {
       current16thNote = 0;
     }
     scheduleNote(current16thNote, futureTickTime, futureTickTime + stopTime);
@@ -139,23 +138,29 @@ function getTempo() {
 function processAudioGraph(pitch, start) {
   let oscOne = createOsc(state.waveforms.osc1);
   let oscTwo = createOsc(state.waveforms.osc2);
-  let oscThree = createOsc(state.waveforms.osc3); // need to add waveform select!
+  let oscThree = createOsc(state.waveforms.osc3);
+  let oscFour = createOsc(state.waveforms.osc4);
+
   let oscOneGain = createGain();
   let oscTwoGain = createGain();
   let oscThreeGain = createGain();
-  let delay = delayFX(state.delayTime, state.delayFB);
+  let oscFourGain = createGain();
+  let delay = delayFX(state.delayTime, state.delayAmp, state.delayFB);
 
   oscOneGain.value = 0.3;
   oscTwoGain.value = 0.3;
   oscThreeGain.value = 0.3;
+  oscFourGain.value = 0.3;
 
   oscOne.frequency.value = pitch;
   oscTwo.frequency.value = pitch;
   oscThree.frequency.value = pitch;
+  oscFour.frequency.value = pitch;
 
   oscOne.detune.value = 17;
   oscTwo.detune.value = 9;
   oscThree.detune.value = 5;
+  oscFour.detune.value = -7;
 
   let filterEnv = createFilter("lowpass", state.adsr.freq, 0.001, ADSR); // should use getter
   let ampEnv = createGain(state.adsr.amp, 0.001, ADSR); // should use getter
@@ -176,12 +181,21 @@ function processAudioGraph(pitch, start) {
     .connect(ampEnv)
     .connect(filterEnv)
     .connect(output);
+  oscFour
+    .connect(oscThreeGain)
+    .connect(ampEnv)
+    .connect(filterEnv)
+    .connect(output);
 
   filterEnv.connect(delay).connect(output); // wet channel (delay)
 
   oscOne.start(start);
   oscTwo.start(start);
+  oscThree.start(start);
+  oscFour.start(start);
 
   oscOne.stop(start + stopTime);
   oscTwo.stop(start + stopTime);
+  oscThree.stop(start + stopTime);
+  oscFour.stop(start + stopTime);
 }

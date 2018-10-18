@@ -45,8 +45,8 @@ export default {
 
 <style scoped>
 input[type="range"]::-webkit-slider-runnable-track {
-  width: 95px;
-  height: 20px;
+  width: 200px;
+  height: 15px;
   outline: none;
   background-color: lightgray;
 }

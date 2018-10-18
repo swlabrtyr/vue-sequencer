@@ -1,7 +1,6 @@
 <template>
-<div>
- <h2>Waveform</h2>
-  <div class="waveforms" id="osc">
+<div class="waveforms">
+  <div class="osc" id="osc">
     <select id="1" v-model="waveforms.osc1" @change="oscSelect">
       <option value="sine">Sine</option>
       <option value="sawtooth">Sawtooth</option>
@@ -25,6 +24,15 @@
       <option value="triangle">Triangle</option>
     </select>
   </div>
+  <div class="osc" id="osc4">
+    <select id="3" v-model="waveforms.osc4" @change="oscSelect">
+      <option value="sine">Sine</option>
+      <option value="sawtooth">Sawtooth</option>
+      <option value="square">Square</option>
+      <option value="triangle">Triangle</option>
+    </select>
+  </div>
+
 </div>
 </template>
 
@@ -35,7 +43,8 @@ export default {
       waveforms: {
         osc1: "sawtooth",
         osc2: "square",
-        osc3: "triangle"
+        osc3: "triangle",
+        osc4: "sine"
       }
     };
   },
@@ -49,7 +58,13 @@ export default {
 </script>
 
 <style scoped>
-/* .waveforms {
+.waveforms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  grid-gap: 0.1px;
   
-} */
+  }
+  select {
+    border-radius: 15px;
+  }
 </style>

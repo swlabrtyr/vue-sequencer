@@ -1,6 +1,5 @@
 <template>
 <div>
-  <h2>Verb</h2>
   <div id="Verb">
     Amnt
      <Slider :initVal="0.5" :minimum="0.001" :maximum="0.8" :increment="0.01" id="delayFB" v-on:slider-updated="updateVerb"></Slider>

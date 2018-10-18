@@ -8,7 +8,7 @@ Vue.use(Vuex);
 // initialize note data
 function createNotes() {
   let notes = [];
-  for (let i = 0; i < 48; ++i) {
+  for (let i = 0; i < 56; ++i) {
     notes.push({
       id: i,
       pitch: 57,
@@ -33,7 +33,8 @@ export const store = new Vuex.Store({
     waveforms: {
       osc1: "square",
       osc2: "square",
-      osc3: "square"
+      osc3: "square",
+      osc4: "sine"
     },
     adsr: {
       amp: {
@@ -76,6 +77,7 @@ export const store = new Vuex.Store({
     filterType: "lowpass",
     filterQ: 0,
     delayTime: 0.0,
+    delayAmp: 0.5,
     delayFB: 0.0,
     reverbAmnt: 0.0
   },
@@ -111,6 +113,9 @@ export const store = new Vuex.Store({
     setDelayTime(state, data) {
       return state.delayTime = data.val;
     },
+    setDelayAmp(state, data) {
+      return state.delayAmp = data.val;
+    },
     setDelayFB(state, data) {
       return state.delayFB = data.val;
     },
@@ -141,7 +146,7 @@ export const store = new Vuex.Store({
         return (state.adsr.freq.sustain.time = amnt);
       } else if (id === "filterRel") {
         return (state.adsr.freq.release.time = amnt);
-      } else return console.log("no data from: ", id);
+      } else return console.error("no data from: ", id);
     },
 
     setFreqAtTime(state, data) {
@@ -159,7 +164,7 @@ export const store = new Vuex.Store({
         return (state.adsr.freq.sustain.time = time);
       } else if (id === "filterRel") {
         return (state.adsr.freq.release.time = time);
-      } return console.log("no data from: ", id);
+      } return console.error("no data from: ", id);
     },
 
     setAmpToVal(state, data) {
@@ -177,7 +182,7 @@ export const store = new Vuex.Store({
         return (state.adsr.amp.sustain.amnt = amnt);
       } else if (id === "ampRel") {
         return (state.adsr.amp.release.time = amnt);
-      } else return console.log("no data from: ", id);
+      } else return console.error("no data from: ", id);
     },
 
     setAmpAtTime(state, data) {
@@ -195,7 +200,7 @@ export const store = new Vuex.Store({
         return (state.adsr.amp.sustain.time = time);
       } else if (id === "ampRel") {
         return (state.adsr.amp.release.time = time);
-      } else return console.log("no data from: ", id);
+      } else return console.error("no data from: ", id);
     }
   },
 

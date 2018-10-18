@@ -1,8 +1,21 @@
 <template>
-  <div class="trigger">
+  <div class="note">
 <div class="unArmed" @click=armNote() :class="{armed: note.isArmed, scheduled: note.scheduled}"> 
 </div>
 <select id="pitch" v-model="note.pitch" @change="setPitch()">
+  <option value=40>E</option>
+  <option value=41>F</option>
+  <option value=42>Gb</option>
+  <option value=43>G</option>
+  <option value=44>Ab</option>
+  <option value=45>A</option>
+  <option value=46>Bb</option>
+  <option value=47>B</option>
+  <option value=48>C</option>
+  <option value=49>Db</option>
+  <option value=50>D</option>
+  <option value=51>Eb</option>
+
   <option value=52>E</option>
   <option value=53>F</option>
   <option value=54>Gb</option>
@@ -62,18 +75,19 @@ export default {
     background-color: skyblue;
     color: grey;
 }
+.note {
+    display: grid;
+    grid-gap: 10px;
+    height: 70px;
+    width: 70px;
+}
 select {
+    justify-self: center;
     width: 50px;
-    height: 20px;
+    height: 10px;
     border-radius: 15px;
-    margin-top: 7px;
-    text-align: center;
     font-size: 10px;
+    text-align: center;
 }
-.trigger {
-    height: 90px;
-    width: 90px;
-    align-items: center;
-    justify-content: center;
-}
+
 </style>

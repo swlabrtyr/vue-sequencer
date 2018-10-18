@@ -28,7 +28,8 @@ export default {
 </script>
 
 <style scoped>
-/* .tempo {
-  
-} */
+input {
+width: 30px;
+text-align: center;
+}
 </style>
