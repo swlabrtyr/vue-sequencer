@@ -19,6 +19,7 @@
     <div class="fx">
       <div>
         <Delay/>
+        <Reverb/>
       </div>
     </div>
   </div>  
@@ -33,6 +34,7 @@ import AmpADSR from "./components/AmpADSR.vue";
 import FilterADSR from "./components/FilterADSR.vue";
 import Waveform from "./components/Waveform.vue";
 import Delay from "./components/Delay.vue";
+import Reverb from "./components/Reverb.vue"
 
 export default {
   name: "App",
@@ -45,7 +47,8 @@ export default {
     AmpADSR,
     FilterADSR,
     Waveform,
-    Delay
+    Delay,
+    Reverb
   },
 
   data: function() {

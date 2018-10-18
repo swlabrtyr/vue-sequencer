@@ -82,6 +82,10 @@ function delayFX(delayAmount, fbAmount) {
   return delay;
 }
 
+function verbFX(amp, amnt) {
+  let reverb = audioContext.createConvolver();
+}
+
 function note2freq(note) {
   return Math.pow(2, (note - 69) / 12) * 440;
 }
@@ -134,7 +138,6 @@ function getTempo() {
 
 function processAudioGraph(pitch, start) {
   let oscOne = createOsc(state.waveforms.osc1);
-  console.log(oscOne.type)
   let oscTwo = createOsc(state.waveforms.osc2);
   let oscThree = createOsc(state.waveforms.osc3); // need to add waveform select!
   let oscOneGain = createGain();
