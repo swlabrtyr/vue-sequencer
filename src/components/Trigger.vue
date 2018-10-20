@@ -64,7 +64,7 @@ export default {
     display: grid;
     width: 65px;
     height: 65px;
-    background-color: lavenderblush;
+    background-color: #738FB0;
     color: powderblue;
 }
 .scheduled {

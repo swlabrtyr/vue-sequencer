@@ -13,7 +13,7 @@
   </div>
   <div class="fx">
     <Delay/>
-    <Reverb/>
+    <!-- <Reverb/> -->
   </div>
 </div>
 </template>
@@ -93,11 +93,12 @@ export default {
 }
 .name {
     grid-column: 5 / 6;
+    justify-self: end;
 }
 .adsr {
     display: grid;
-    grid-template-rows: 300px 300px;
-    grid-gap: 10px;
+    grid-template-rows: 200px 200px;
+    grid-gap: 5px;
     grid-row: 4 / 5;
     grid-column: 2 / 3;
     justify-self: start;
@@ -108,7 +109,7 @@ export default {
     grid-gap: 10px;
     grid-row: 4 / 5;
     grid-column: 5 / 6;
-    justify-self: start;
+    justify-self: end;
 }
 
 </style>

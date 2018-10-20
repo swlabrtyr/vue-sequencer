@@ -1,5 +1,6 @@
 <template>
 <div>
+  <h4>Delay</h4> 
   <div>
     Time
     <Slider :initVal="0.5"
@@ -9,7 +10,7 @@
             id="delayTime"
             v-on:slider-updated="updateDelayTime"></Slider>
   </div>
-  <div>
+  <div> 
     FB
     <Slider
       :initVal="0.5"

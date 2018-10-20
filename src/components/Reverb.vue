@@ -15,7 +15,7 @@ export default {
   },
 
   methods: {
-    updateDelayTime: function(sliderData) {
+    updateVerb: function(sliderData) {
       this.$store.commit("setVerbAmnt", sliderData);
     },
   }

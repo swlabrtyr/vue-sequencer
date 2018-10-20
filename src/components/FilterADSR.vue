@@ -57,7 +57,4 @@ export default {
     grid-template-columns: 200px 200px 200px 200px;
     grid-gap: 10px;
 }
-slider {
-    width: 300px;
-}
 </style>
