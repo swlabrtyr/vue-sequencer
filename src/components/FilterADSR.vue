@@ -1,6 +1,6 @@
 <template> 
   <div>
-    <div class=ADSR>
+    <div class="ADSR">
       <div>
         <h4> FreqAtk </h4>
         Amount     
@@ -54,7 +54,7 @@ export default {
 <style scoped>
 .ADSR {
     display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-columns: 300px 300px 300px 300px;
     grid-gap: 10px;
 }
 </style>

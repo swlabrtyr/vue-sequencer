@@ -13,7 +13,6 @@
   </div>
   <div class="fx">
     <Delay/>
-    <!-- <Reverb/> -->
   </div>
 </div>
 </template>
@@ -60,9 +59,10 @@ export default {
 
 <style>
 #app {
+    
     display: grid;
-    grid-gap: 15px;
-    grid-template-rows: 10px 50px 500px 100px 100px 100px;
+    grid-gap: 10px;
+    grid-template-rows: 10px 50px 450px 100px 100px 100px;
     grid-template-columns: 50px repeat(5, 250px) 50px;
 }
 .sequencer {
@@ -97,8 +97,8 @@ export default {
 }
 .adsr {
     display: grid;
-    grid-template-rows: 200px 200px;
-    grid-gap: 5px;
+    grid-template-rows: 150px 150px;
+    grid-gap: 1px;
     grid-row: 4 / 5;
     grid-column: 2 / 3;
     justify-self: start;
@@ -107,9 +107,9 @@ export default {
     display: grid;
     grid-template-column: 300px 300px;
     grid-gap: 10px;
-    grid-row: 4 / 5;
-    grid-column: 5 / 6;
-    justify-self: end;
+    grid-row: 7 / 8;
+    grid-column: 2 / 3;
+    justify-self: start;
 }
 
 </style>

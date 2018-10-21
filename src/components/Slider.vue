@@ -44,19 +44,42 @@ export default {
 </script>
 
 <style scoped>
-input[type="range"]::-webkit-slider-runnable-track {
-  width: 300px;
-  height: 15px;
-  outline: none;
-  background-color: lightgray;
+input[type="range"] {
+-webkit-appearance: none; 
+background: transparent; 
+width: 300px;
 }
+
+input[type="range"]:focus {
+  outline: black; 
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    width: 400px;
+    height: 5px;
+    outline: none;
+    background-color: lightgray;
+}
+
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background: lavender;
-  width: 20px;
-  height: 20px;
-  outline: none;
-  background-color: lightgray;
-  cursor: pointer;
+    -webkit-appearance: none;
+    background: lavender;
+    margin-top: -2px;
+    border-radius: 3px;
+    width: 10px;
+    height: 7px;
+    outline: none;
+    background-color: lightgray;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px #000000, 0px 2px 2px #0d0d0d; /* Add cool effects to your sliders! */
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: gray;
+    
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+    background: slategray
+
 }
 </style>
