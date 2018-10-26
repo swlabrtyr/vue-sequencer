@@ -162,8 +162,8 @@ function processAudioGraph(pitch, start) {
   oscThree.detune.value = 5;
   oscFour.detune.value = -7;
 
-  let filterEnv = createFilter("lowpass", state.adsr.freq, 0.001, ADSR); // should use getter
-  let ampEnv = createGain(state.adsr.amp, 0.001, ADSR); // should use getter
+  let filterEnv = createFilter("lowpass", store.getters.getFreqADSR, 0.001, ADSR); // should use getter
+  let ampEnv = createGain(store.getters.getAmpADSR, 0.001, ADSR); // should use getter
 
   // dry channel
   oscOne

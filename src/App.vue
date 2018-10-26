@@ -43,12 +43,6 @@ export default {
     Reverb
   },
   
-  data: function() {
-    return {
-      notes
-    };
-  },
-  
   computed: {
     notes() {
       return this.$store.getters.getNotesArray;
@@ -59,7 +53,8 @@ export default {
 
 <style>
 #app {
-    
+    width: 100;
+    background-color: lavender;
     display: grid;
     grid-gap: 10px;
     grid-template-rows: 10px 50px 450px 100px 100px 100px;

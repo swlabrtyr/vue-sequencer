@@ -31,10 +31,10 @@ export const store = new Vuex.Store({
     noteGainValue: 0,
     notes,
     waveforms: {
-      osc1: "square",
+      osc1: "triangle",
       osc2: "square",
       osc3: "square",
-      osc4: "sine"
+      osc4: "sawtooth"
     },
     adsr: {
       amp: {
@@ -103,9 +103,9 @@ export const store = new Vuex.Store({
     armNote(state, noteData) {
       state.notes.map(function (note) {
         if (note.id === noteData.id) {
+          console.log("note armed! ", note.id);
           return (note.isArmed = !note.isArmed);
         } else {
-          console.log("no notes armed");
           return null;
         }
       });
@@ -210,6 +210,12 @@ export const store = new Vuex.Store({
     },
     getNotesArray: state => {
       return state.notes;
+    },
+    getAmpADSR: state => {
+      return state.adsr.amp;
+    },
+    getFreqADSR: state => {
+      return state.adsr.freq;
     }
   }
 });

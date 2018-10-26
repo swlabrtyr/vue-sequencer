@@ -57,15 +57,13 @@ export default {
     width: 70px;
     height: 70px;
     background-color: cornflowerblue;
-    color: papayawhip;
 }
 .armed {
     ®order-radius: 20px;
     display: grid;
     width: 65px;
     height: 65px;
-    background-color: #738FB0;
-    color: powderblue;
+    background-color: peru;
 }
 .scheduled {
     width: 60px;
@@ -73,7 +71,6 @@ export default {
     border-radius: 50%;
     display: grid;
     background-color: skyblue;
-    color: grey;
 }
 .note {
     display: grid;
