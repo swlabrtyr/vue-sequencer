@@ -58,7 +58,7 @@ export default {
     display: grid;
     grid-gap: 10px;
     grid-template-rows: 10px 50px 450px 100px 100px 100px;
-    grid-template-columns: 50px repeat(5, 250px) 50px;
+    grid-template-columns: 50px repeat(auto-fill, minmax(250px, 1fr)) 50px;
 }
 .sequencer {
     display: grid;
