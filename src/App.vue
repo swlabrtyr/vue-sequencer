@@ -53,8 +53,8 @@ export default {
 
 <style>
 #app {
-    width: 100;
-    background-color: lavender;
+    width: 100%;
+    background-color: white;
     display: grid;
     grid-gap: 10px;
     grid-template-rows: 10px 50px 450px 100px 100px 100px;

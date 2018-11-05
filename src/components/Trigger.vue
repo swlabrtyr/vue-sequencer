@@ -63,7 +63,7 @@ export default {
     display: grid;
     width: 65px;
     height: 65px;
-    background-color: peru;
+    background-color: darkseagreen;
 }
 .scheduled {
     width: 60px;
@@ -79,6 +79,7 @@ export default {
     width: 70px;
 }
 select {
+    position: absolute;
     justify-self: center;
     width: 50px;
     height: 10px;
