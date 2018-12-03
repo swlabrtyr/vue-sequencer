@@ -1,11 +1,7 @@
 <template>
 <div class="playpause">
-  <div class="btn">
     <button id="start" @click=play()> start </button>
-  </div>
-  <div class="btn">
     <button id="stop" @click=stop()>stop</button>
-  </div>
 </div>
 </template>
 
@@ -31,10 +27,15 @@ export default {
 .playpause {
     display:grid;
     grid-template-columns: 1fr 1fr;
-  width: 200px;
-  height: 100px;
+    width: 150px;
+    height: 100px;
 }
-.button {
-    /* justify-self: start; */
+button {
+    border: none;
+    height: 20px;
+    width: 40px;
+    border-radius: 12px;
+    background-color: LightSlateGrey;
+    justify-self: start;
 }
 </style>

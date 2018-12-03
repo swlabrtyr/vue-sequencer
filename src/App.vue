@@ -6,7 +6,6 @@
   <Transport class="transport"/>
   <Tempo class="tempo"/>
   <Waveform class="waveform"/>
-  <h4 class="name">SeQNCeR</h4>
   <div class="adsr">
     <AmpADSR/>
     <FilterADSR/>
@@ -52,13 +51,16 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
 #app {
-    width: 100%;
+    font-family: 'Work Sans', sans-serif;
+    width: 50%;
     background-color: white;
     display: grid;
-    grid-gap: 10px;
-    grid-template-rows: 10px 50px 450px 100px 100px 100px;
-    grid-template-columns: 50px repeat(auto-fill, minmax(250px, 1fr)) 50px;
+    grid-gap: 1px;
+    grid-template-rows: 20px 60px 400px 100px 100px 100px;
+    grid-template-columns: 70px repeat(auto-fill, minmax(250px, 1fr)) 50px;
 }
 .sequencer {
     display: grid;
@@ -66,7 +68,7 @@ export default {
     grid-template-rows: 100px 100px 100px auto;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-    grid-gap: 15px;
+    grid-gap: 1px;
 }
 .trigger {
     justify-self: start;
