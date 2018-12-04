@@ -66,7 +66,7 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: lavender;
     margin-top: -2px;
-    border-radius: 3px;
+    border-radius: 2px;
     width: 10px;
     height: 7px;
     outline: none;

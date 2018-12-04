@@ -52,6 +52,9 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
+body {
+    background-color: #323435;
+}
 
 #app {
     font-family: 'Work Sans', sans-serif;
