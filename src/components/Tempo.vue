@@ -1,7 +1,7 @@
 <template>
-  <div class="tempo" id="tempo">BPM (40 - 240)
-    <input :value="bpm" @input="setTempo" type="text"> {{ bpm }} 
-  </div>
+<div class="tempo" id="tempo">BPM (40 - 240)
+  <input :value="bpm" @input="setTempo" type="text"> {{ bpm }} 
+</div>
 </template>
 
 <script>
@@ -14,12 +14,12 @@ export default {
   methods: {
     setTempo(e) {
       let bpm = parseInt(e.target.value);
-
+      
       // sanitize user input
       if (isNaN(bpm)) bpm = 30; 
       if (bpm < 30) bpm = 30;
       if (bpm > 240) bpm = 240;
-
+      
       this.$store.commit("setTempo", bpm);
       this.bpm = bpm;           // update bpm to reflect in UI ie -> {{}}
     }
@@ -28,8 +28,11 @@ export default {
 </script>
 
 <style scoped>
+  .tempo {
+ width: 400px; 
+  }
 input {
-width: 30px;
-text-align: center;
+    width: 30px;
+    text-align: center;
 }
 </style>

@@ -32,7 +32,7 @@
       <option value="triangle">Triangle</option>
     </select>
   </div>
-
+  
 </div>
 </template>
 
@@ -48,7 +48,7 @@ export default {
       }
     };
   },
-
+  
   methods: {
     oscSelect() {
       this.$store.commit("setWaveform", this.waveforms);
@@ -60,11 +60,15 @@ export default {
 <style scoped>
 .waveforms {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-  grid-gap: 0.1px;
-  
-  }
-  select {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    justify-self: start;
+    
+}
+select {
+    height: 20px;
+    border: none;
     border-radius: 15px;
-  }
+    justify-self: start;
+}
 </style>

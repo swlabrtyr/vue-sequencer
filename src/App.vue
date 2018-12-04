@@ -55,12 +55,13 @@ export default {
 
 #app {
     font-family: 'Work Sans', sans-serif;
-    width: 50%;
-    background-color: white;
+    width: 100%;
+    background-color: #323435;
+    color: white;
     display: grid;
     grid-gap: 1px;
-    grid-template-rows: 20px 60px 400px 100px 100px 100px;
-    grid-template-columns: 70px repeat(auto-fill, minmax(250px, 1fr)) 50px;
+    grid-template-rows: 20px 60px 400px 1fr;
+    grid-template-columns: 70px repeat(auto-fill, minmax(250px, 1fr)) 110px;
 }
 .sequencer {
     display: grid;
@@ -68,7 +69,7 @@ export default {
     grid-template-rows: 100px 100px 100px auto;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-    grid-gap: 1px;
+    grid-gap: 5px;
 }
 .trigger {
     justify-self: start;

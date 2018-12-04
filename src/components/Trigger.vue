@@ -43,7 +43,7 @@ export default {
     },
     setPitch() {
       let vm = this;
-      this.$store.commit("setPitch", vm.note);
+      this.$store.commit("setPitch", vm.note); // css green color #a9ed89
     }
   },
   computed: {}
@@ -56,16 +56,16 @@ export default {
     height: 70px;
     width: 70px;
     justify-self: start;
-    grid-gap: 5px;
+    grid-gap: 8px;
 }
 select {
     border: none;
     position: relative;
     justify-self: start;
     width: 65px;
-    height: 10px;
+    height: 20px;
     border-radius: 15px;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     background-color: WhiteSmoke;
 }
@@ -73,19 +73,19 @@ select {
     border-radius: 10px;
     width: 65px;
     height: 65px;
-    background-color: cornflowerblue;
+    background-color: #a9c9d1;
 }
 .armed {
     border-radius: 20px;
     width: 65px;
     height: 65px;
-    background-color: darkseagreen;
+    background-color: #9ef7f7;
 }
 .scheduled {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 100px;
-    background-color: skyblue;
-    justify-selft: end;
+    background-color: white;
+    justify-self: start;
 }
 </style>
