@@ -63,8 +63,8 @@ body {
     color: white;
     display: grid;
     grid-gap: 1px;
-    grid-template-rows: 20px 60px 400px 1fr;
-    grid-template-columns: 70px repeat(auto-fill, minmax(250px, 1fr)) 110px;
+    grid-template-rows: 20px 60px 400px 1fr 20px;
+    grid-template-columns: 70px repeat(auto-fill, minmax(250px, 1fr)) 70px;
 }
 .sequencer {
     display: grid;

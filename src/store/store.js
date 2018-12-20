@@ -2,9 +2,6 @@ import Vue from "vue";
 import Vuex from "vuex";
 Vue.use(Vuex);
 
-// need to refactor, break state up into smaller chunks
-// put mutations/getters into separate files
-
 // initialize note data
 function createNotes() {
   let notes = [];

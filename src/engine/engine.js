@@ -70,7 +70,7 @@ function delayFX(delayAmount, amp, fbAmount) {
 
   // Add Lowpass Filter
   let filter = audioContext.createBiquadFilter();
-  filter.frequency.value = 2500;
+  filter.frequency.value = 4500;
   filter.Q.value = 0.8;
 
   filter.connect(delay);
