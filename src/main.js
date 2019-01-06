@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import { store } from "./store/store";
-import engine from "./engine/engine";
+//import engine from "./engine/engine";
 
 Vue.config.productionTip = false;
 

@@ -40,6 +40,7 @@ export default {
     armNote() {
       let vm = this;
       this.$store.commit("armNote", vm.note);
+      console.log(vm.note);
     },
     setPitch() {
       let vm = this;

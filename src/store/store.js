@@ -90,9 +90,6 @@ export const store = new Vuex.Store({
       if (isNaN(bpm)) bpm = 1;
       state.bpm = bpm;
     },
-    schedule() { },
-    updateGlobalGain() { },
-    updateNoteGain() { },
     setWaveform(state, waveforms) {
       console.log(state.waveforms);
       state.waveforms = waveforms;
@@ -126,8 +123,6 @@ export const store = new Vuex.Store({
         }
       });
     },
-    filterCutoff() { },
-
     setFreqToVal(state, data) {
       let id = data.id;
       let amnt = data.val;
@@ -145,7 +140,6 @@ export const store = new Vuex.Store({
         return (state.adsr.freq.release.time = amnt);
       } else return console.error("no data from: ", id);
     },
-
     setFreqAtTime(state, data) {
       let id = data.id;
       let time = data.val;
@@ -163,7 +157,6 @@ export const store = new Vuex.Store({
         return (state.adsr.freq.release.time = time);
       } return console.error("no data from: ", id);
     },
-
     setAmpToVal(state, data) {
       let id = data.id;
       let amnt = data.val;
@@ -181,7 +174,6 @@ export const store = new Vuex.Store({
         return (state.adsr.amp.release.time = amnt);
       } else return console.error("no data from: ", id);
     },
-
     setAmpAtTime(state, data) {
       let id = data.id;
       let time = data.val;

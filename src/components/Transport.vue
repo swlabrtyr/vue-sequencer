@@ -28,7 +28,7 @@ export default {
     display:grid;
     grid-template-columns: 1fr 1fr;
     width: 150px;
-    height: 100px;
+    height: 50px;
 }
 button {
     border: none;
