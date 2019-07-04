@@ -138,7 +138,7 @@ export const store = new Vuex.Store({
         return (state.adsr.freq.sustain.time = amnt);
       } else if (id === "filterRel") {
         return (state.adsr.freq.release.time = amnt);
-      } else return console.error("no data from: ", id);
+      } else return null;
     },
     setFreqAtTime(state, data) {
       let id = data.id;
@@ -155,7 +155,7 @@ export const store = new Vuex.Store({
         return (state.adsr.freq.sustain.time = time);
       } else if (id === "filterRel") {
         return (state.adsr.freq.release.time = time);
-      } return console.error("no data from: ", id);
+      } return null;
     },
     setAmpToVal(state, data) {
       let id = data.id;
@@ -172,7 +172,7 @@ export const store = new Vuex.Store({
         return (state.adsr.amp.sustain.amnt = amnt);
       } else if (id === "ampRel") {
         return (state.adsr.amp.release.time = amnt);
-      } else return console.error("no data from: ", id);
+      } else return null;
     },
     setAmpAtTime(state, data) {
       let id = data.id;
@@ -189,7 +189,7 @@ export const store = new Vuex.Store({
         return (state.adsr.amp.sustain.time = time);
       } else if (id === "ampRel") {
         return (state.adsr.amp.release.time = time);
-      } else return console.error("no data from: ", id);
+      } else return null;
     }
   },
 
