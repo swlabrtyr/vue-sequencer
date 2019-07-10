@@ -6,6 +6,7 @@
 </template>
 
 <script>
+// Need to change start to play/pause, make stop button intialise to the first trigger
 export default {
   data() {
     return {};
@@ -31,7 +32,7 @@ export default {
 button {
     border: none;
     height: 20px;
-    width: 40px;
+    width: 60px;
     border-radius: 12px;
     background-color: LightSlateGrey;
     justify-self: start;

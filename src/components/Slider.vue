@@ -47,7 +47,7 @@ export default {
 input[type="range"] {
 -webkit-appearance: none; 
 background: transparent; 
-width: 240px;
+width: 290px;
 }
 
 input[type="range"]:focus {

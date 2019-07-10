@@ -68,7 +68,7 @@ body {
 }
 .sequencer {
     display: grid;
-    grid-template-columns: repeat(14, 80px);
+    grid-template-columns: repeat(15, 80px);
     grid-template-rows: 100px 100px 100px auto;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
@@ -106,7 +106,7 @@ body {
 }
 .fx {
     display: grid;
-    grid-template-column: 300px 300px;
+    grid-template-columns: 300px 300px;
     grid-gap: 10px;
     grid-row: 7 / 8;
     grid-column: 2 / 3;

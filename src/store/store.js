@@ -1,11 +1,11 @@
 import Vue from "vue";
 import Vuex from "vuex";
 Vue.use(Vuex);
-
+const totalNotes = 60;
 // initialize note data
 function createNotes() {
   let notes = [];
-  for (let i = 0; i < 56; ++i) {
+  for (let i = 0; i < totalNotes; ++i) {
     notes.push({
       id: i,
       pitch: 57,
