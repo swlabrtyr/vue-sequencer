@@ -5,7 +5,6 @@
            :min="minimum"
            :max="maximum"
            :step="increment"
-           :value="initVal"
            :id="id"
            @change="emitValue"/> 
   </div>

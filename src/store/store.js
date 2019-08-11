@@ -1,7 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 Vue.use(Vuex);
+
 const totalNotes = 60;
+
 // initialize note data
 function createNotes() {
   let notes = [];
@@ -19,10 +21,9 @@ function createNotes() {
 let notes = createNotes();
 
 export const store = new Vuex.Store({
-  // Application data
   state: {
     currentNote: 0,
-    sequencing: false,
+    isPlaying: false,
     bpm: 120,
     globalGainValue: 0,
     noteGainValue: 0,
@@ -81,10 +82,10 @@ export const store = new Vuex.Store({
 
   mutations: {
     start(state) {
-      state.sequencing = true;
+      state.isPlaying = true;
     },
     stop(state) {
-      state.sequencing = false;
+      state.isPlaying = false;
     },
     setTempo(state, bpm) {
       if (isNaN(bpm)) bpm = 1;
@@ -105,13 +106,13 @@ export const store = new Vuex.Store({
       });
     },
     setDelayTime(state, data) {
-      return state.delayTime = data.val;
+      return (state.delayTime = data.val);
     },
     setDelayAmp(state, data) {
-      return state.delayAmp = data.val;
+      return (state.delayAmp = data.val);
     },
     setDelayFB(state, data) {
-      return state.delayFB = data.val;
+      return (state.delayFB = data.val);
     },
     setPitch(state, noteData) {
       state.notes.map(note => {

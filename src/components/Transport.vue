@@ -1,7 +1,11 @@
 <template>
 <div class="playpause">
-    <button id="start" @click=play()> start </button>
+  <div v-if="$store.state.isPlaying">
     <button id="stop" @click=stop()>stop</button>
+  </div>
+  <div v-else>
+    <button id="start" @click=play> start </button>   
+  </div>
 </div>
 </template>
 
