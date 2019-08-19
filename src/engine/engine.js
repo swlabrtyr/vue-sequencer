@@ -2,6 +2,11 @@ import { store } from "../store/store";
 
 window.onload = function () {
   const audioContext = new AudioContext();
+  document.querySelector('button').addEventListener('click', function() {
+    audioContext.resume().then(() => {
+      console.log('Playback resumed successfully');
+    });
+  });
   const output = audioContext.destination;
   const state = store.state;
   const notes = state.notes;

@@ -29,7 +29,6 @@ import Reverb from "./components/Reverb.vue"
 
 export default {
   name: "App",
-  
   components: {
     Transport,
     Tempo,
@@ -41,7 +40,6 @@ export default {
     Delay,
     Reverb
   },
-  
   computed: {
     notes() {
       return this.$store.getters.getNotesArray;
@@ -66,6 +64,7 @@ body {
     grid-template-rows: 20px 60px 400px 1fr 20px;
     grid-template-columns: 70px repeat(auto-fill, minmax(250px, 1fr)) 70px;
 }
+
 .sequencer {
     display: grid;
     grid-template-columns: repeat(15, 80px);
@@ -74,28 +73,34 @@ body {
     grid-row: 3 / 4;
     grid-gap: 5px;
 }
+
 .trigger {
     justify-self: start;
 }
+
 .transport {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     justify-self: start;
 }
+
 .tempo {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
     justify-self: start;
 }
+
 .waveform {
     grid-column: 4 / 5;
     grid-row: 2 / 3;
     justify-self: start;
 }
+
 .name {
     grid-column: 5 / 6;
     justify-self: end;
 }
+
 .adsr {
     display: grid;
     grid-template-rows: 150px 150px;
@@ -104,6 +109,7 @@ body {
     grid-column: 2 / 3;
     justify-self: start;
 }
+
 .fx {
     display: grid;
     grid-template-columns: 300px 300px;
