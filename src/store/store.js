@@ -92,7 +92,6 @@ export const store = new Vuex.Store({
       state.bpm = bpm;
     },
     setWaveform(state, waveforms) {
-      console.log(state.waveforms);
       state.waveforms = waveforms;
     },
     armNote(state, noteData) {
@@ -119,7 +118,6 @@ export const store = new Vuex.Store({
         if (note.id === noteData.id) {
           return (note.pitch = noteData.pitch);
         } else {
-          console.log("no notes scheduled");
           return null;
         }
       });
