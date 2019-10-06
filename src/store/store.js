@@ -154,7 +154,9 @@ export const store = new Vuex.Store({
         return (state.adsr.freq.sustain.time = time);
       } else if (id === "filterRel") {
         return (state.adsr.freq.release.time = time);
-      } return null;
+      } else {
+        return null;
+      }
     },
     setAmpToVal(state, data) {
       let id = data.id;
@@ -207,4 +209,3 @@ export const store = new Vuex.Store({
     }
   }
 });
-
