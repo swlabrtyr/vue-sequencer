@@ -2,12 +2,15 @@ import { store } from "../store/store";
 
 window.onload = function () {
   const audioContext = new AudioContext();
-  document.querySelector('button').addEventListener('click', function() {
+  document.querySelector("button").addEventListener("click", function() {
     audioContext.resume().then(() => {
-      console.log('Playback resumed successfully');
+      console.log("Playback resumed successfully");
     });
   });
+
   const output = audioContext.destination;
+  output.gain.value = 0.5;
+
   const state = store.state;
   const notes = state.notes;
   const scheduleAheadTime = 0.1;
@@ -149,10 +152,10 @@ window.onload = function () {
     let oscFourGain = createGain();
     let delay = delayFX(state.delayTime, state.delayAmp, state.delayFB);
 
-    oscOneGain.value = 0.3;
-    oscTwoGain.value = 0.3;
-    oscThreeGain.value = 0.3;
-    oscFourGain.value = 0.3;
+    oscOneGain.value = 0.2;
+    oscTwoGain.value = 0.2;
+    oscThreeGain.value = 0.2;
+    oscFourGain.value = 0.2;
 
     oscOne.frequency.value = pitch;
     oscTwo.frequency.value = pitch;
