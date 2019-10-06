@@ -1,31 +1,16 @@
 # vue-sequencer
 
-## Project setup
-```
-yarn install
-```
+## Add a note 
+Click the individual squares to active notes
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Change the note's pitch
+Use the select to change the pitch of a note
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## Play with the effects
+Use the sliders below to change the ADSR of a note's amplitude and filter
 
-### Lints and fixes files
-```
-yarn run lint
-```
+## Select your waveforms
+Choose between a combo of square, triangle, sawtooth and sine
 
-### Run your unit tests
-```
-yarn run test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn run test:e2e
-```
+## Press play
+Make some tunes 
