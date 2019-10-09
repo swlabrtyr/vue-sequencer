@@ -8,8 +8,10 @@ window.onload = function () {
     });
   });
 
-  const output = audioContext.destination;
-  output.gain.value = 0.5;
+  const destination = audioContext.destination;
+  const outputGain = audioContext.createGain();
+  outputGain.gain.value = 0.1;
+  outputGain.connect(destination);
 
   const state = store.state;
   const notes = state.notes;
@@ -175,24 +177,24 @@ window.onload = function () {
       .connect(oscOneGain)
       .connect(ampEnv)
       .connect(filterEnv)
-      .connect(output);
+      .connect(outputGain);
     oscTwo
       .connect(oscTwoGain)
       .connect(ampEnv)
       .connect(filterEnv)
-      .connect(output);
+      .connect(outputGain);
     oscThree
       .connect(oscThreeGain)
       .connect(ampEnv)
       .connect(filterEnv)
-      .connect(output);
+      .connect(outputGain);
     oscFour
       .connect(oscThreeGain)
       .connect(ampEnv)
       .connect(filterEnv)
-      .connect(output);
+      .connect(outputGain);
 
-    filterEnv.connect(delay).connect(output); // wet channel (delay)
+    filterEnv.connect(delay).connect(outputGain); // wet channel (delay)
 
     oscOne.start(start);
     oscTwo.start(start);
@@ -204,4 +206,4 @@ window.onload = function () {
     oscThree.stop(start + stopTime);
     oscFour.stop(start + stopTime);
   }
-}
+};
