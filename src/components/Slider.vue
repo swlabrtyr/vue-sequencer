@@ -58,7 +58,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     width: 400px;
     height: 5px;
     outline: none;
-    background-color: lightgray;
+    background-color: white;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -67,18 +67,18 @@ input[type="range"]::-webkit-slider-thumb {
     margin-top: -2px;
     border-radius: 2px;
     width: 10px;
-    height: 7px;
+    height: 9px;
     outline: none;
-    background-color: lightgray;
+    background-color: grey;
     cursor: pointer;
-    box-shadow: 1px 1px 0px #000000, 0px 2px 2px #0d0d0d; /* Add cool effects to your sliders! */
+/*    box-shadow: 1px 1px 0px #000000, 0px 2px 2px #0d0d0d; /* Add cool effects to your sliders! */
 }
 input[type="range"]:focus::-webkit-slider-runnable-track {
     background: gray;
     
 }
 input[type="range"]:focus::-webkit-slider-thumb {
-    background: slategray
+    background: black
 
 }
 </style>
