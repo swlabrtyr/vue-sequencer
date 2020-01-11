@@ -54,16 +54,16 @@ export default {
 <style scoped>
 .note {
     display: grid;
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
     justify-self: start;
-    grid-gap: 8px;
+    grid-gap: 4px;
 }
 select {
     border: none;
     position: relative;
     justify-self: start;
-    width: 65px;
+    width: 35px;
     height: 20px;
     border-radius: 15px;
     font-size: 12px;
@@ -72,19 +72,19 @@ select {
 }
 .unArmed {
     border-radius: 10px;
-    width: 65px;
-    height: 65px;
+    width: 30px;
+    height: 30px;
     background-color: #a9c9d1;
 }
 .armed {
     border-radius: 20px;
-    width: 65px;
-    height: 65px;
+    width: 30px;
+    height: 30px;
     background-color: #9ef7f7;
 }
 .scheduled {
-    width: 65px;
-    height: 65px;
+    width: 25px;
+    height: 25px;
     border-radius: 100px;
     background-color: white;
     justify-self: start;
